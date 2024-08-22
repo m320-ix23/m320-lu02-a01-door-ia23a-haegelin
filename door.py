@@ -13,7 +13,7 @@ class Door:
     # Konstruktoren werden als Erstes im Programm angeschrieben.
     def __init__(self, ref2door_lock, base_color):
         """
-        Erzeugt ein Tür-Objekt.
+        Erzeugt ein Tür-Objekt..
         :param ref2door_lock:
         :param base_color:
         """
