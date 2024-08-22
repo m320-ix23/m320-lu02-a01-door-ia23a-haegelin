@@ -109,6 +109,10 @@ nur für die korrekte Übersetzung und Ausführung
 """
 
 
+def unlock():
+    return False
+
+
 class DoorLock:
     """
     dummy Klasse, damit in der Klasse Tuere kein Fehler auftritt
@@ -119,9 +123,6 @@ class DoorLock:
 
     def lock(self):
         return True
-
-    def unlock(self):
-        return False
 
 
 # Hier die main-Methode festlegen
