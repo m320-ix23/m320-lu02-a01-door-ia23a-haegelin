@@ -113,6 +113,10 @@ def unlock():
     return False
 
 
+def lock():
+    return True
+
+
 class DoorLock:
     """
     dummy Klasse, damit in der Klasse Tuere kein Fehler auftritt
@@ -120,9 +124,6 @@ class DoorLock:
 
     def __init__(self):
         print("ein Schloss wurde erzeugt")
-
-    def lock(self):
-        return True
 
 
 # Hier die main-Methode festlegen
