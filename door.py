@@ -1,9 +1,14 @@
+"""
+Dieses Modul beschreibt eine Türklasse und eine zugehörige Türschlossklasse.
+"""
+
 class Door:
     """
-    Diese Klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den Zuständen
-    door_is_open (für geöffnete Türe) sowie door_is_locked (für verriegelte Türe).
-    Die Türe überwacht die beiden Zustände und verhindert so Aktionen, die nicht möglich sind.
-    Das Verriegeln selber delegiert die Türe an ein Objekt vom Typ DoorLock (Türschloss).
+    Diese Klasse beschreibt eine Türe mit der Eigenschaft color (Farbe) und den
+    Zuständen door_is_open (für geöffnete Türe) sowie door_is_locked (für verriegelte
+    Türe). Die Türe überwacht die beiden Zustände und verhindert so Aktionen,
+    die nicht möglich sind. Das Verriegeln selber delegiert die Türe an ein Objekt
+    vom Typ DoorLock (Türschloss).
     """
 
     def __init__(self, ref2door_lock, base_color):
@@ -19,8 +24,8 @@ class Door:
 
     def open_the_door(self):
         """
-        Methode zum Öffnen der Türe.
-        Dies ist nur möglich, wenn die Türe nicht verriegelt ist.
+        Methode zum Öffnen der Türe. Dies ist nur möglich, wenn die Türe nicht
+        verriegelt ist.
         """
         if not self._door_is_locked:
             self._door_is_open = True
@@ -29,16 +34,14 @@ class Door:
 
     def close_the_door(self):
         """
-        Methode zum Schließen der Türe.
-        Das Schließen ist immer möglich.
+        Methode zum Schließen der Türe. Das Schließen ist immer möglich.
         """
         self._door_is_open = False
 
     def lock_the_door(self):
         """
-        Methode zum Verriegeln der Türe.
-        Dies ist nur möglich, wenn die Türe geschlossen ist.
-        Das Verriegeln wird an das Türschloss delegiert.
+        Methode zum Verriegeln der Türe. Dies ist nur möglich, wenn die Türe
+        geschlossen ist. Das Verriegeln wird an das Türschloss delegiert.
         """
         if not self._door_is_open:
             self._door_is_locked = self._the_door_lock.lock()
@@ -47,9 +50,8 @@ class Door:
 
     def unlock_the_door(self):
         """
-        Methode zum Entriegeln der Türe.
-        Dies ist nur möglich, wenn die Türe verriegelt ist.
-        Das Entriegeln wird an das Türschloss delegiert.
+        Methode zum Entriegeln der Türe. Dies ist nur möglich, wenn die Türe
+        verriegelt ist. Das Entriegeln wird an das Türschloss delegiert.
         """
         if self._door_is_locked:
             self._door_is_locked = self._the_door_lock.unlock()
